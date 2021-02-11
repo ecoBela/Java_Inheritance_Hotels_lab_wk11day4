@@ -20,4 +20,8 @@ public abstract class Room {
     public int getGuests() {
         return guests.size();
     }
+
+    public void addGuest(Guest guest) {
+        this.guests.add(guest);
+    }
 }

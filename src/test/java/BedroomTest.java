@@ -1,3 +1,4 @@
+import People.Guest;
 import Rooms.Bedroom;
 import Rooms.RoomType;
 import org.junit.Before;
@@ -7,10 +8,12 @@ import static org.junit.Assert.assertEquals;
 
 public class BedroomTest {
     Bedroom bedroom;
+    Guest guest;
 
     @Before
     public void before(){
         bedroom = new Bedroom(2, 33, RoomType.DOUBLE);
+        guest = new Guest("Britney");
     }
 
     @Test
@@ -30,6 +33,12 @@ public class BedroomTest {
     @Test
     public void hasRoomType(){
         assertEquals(RoomType.DOUBLE, bedroom.getRoomType());
+    }
+
+    @Test
+    public void addGuest(){
+        bedroom.addGuest(guest);
+        assertEquals(1, bedroom.getGuests());
     }
 
 }

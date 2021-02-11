@@ -1,5 +1,7 @@
 package Rooms;
 
+import People.Guest;
+
 public class Bedroom extends Room {
     private int roomNumber;
     private RoomType roomType;
@@ -17,4 +19,5 @@ public class Bedroom extends Room {
     public RoomType getRoomType() {
         return roomType;
     }
+
 }
