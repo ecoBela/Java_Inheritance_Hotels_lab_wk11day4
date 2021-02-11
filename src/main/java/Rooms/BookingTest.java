@@ -21,4 +21,9 @@ public class BookingTest {
         assertEquals(3, booking.getNoOfNights());
     }
 
+    @Test
+    public void hasBedroom(){
+        assertEquals(bedroom, booking.getBedroom());
+    }
+
 }
