@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public abstract class Room {
     private int capacity;
     private ArrayList<Guest> guests;
+    private double rate;
 
-    public Room(int capacity){
+    public Room(int capacity, double rate){
         this.capacity = capacity;
         this.guests = new ArrayList<Guest>();
+        this.rate = rate;
     }
 
     public int getCapacity() {
@@ -28,4 +30,8 @@ public abstract class Room {
     public void removeGuest(Guest guest){
         this.guests.remove(guest);
     };
+
+    public double getRate() {
+        return rate;
+    }
 }

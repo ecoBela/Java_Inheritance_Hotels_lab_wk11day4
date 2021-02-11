@@ -27,15 +27,15 @@ public class HotelTest {
 
     @Before
     public void before(){
-        bedroom1 = new Bedroom(2, 44, RoomType.DOUBLE);
-        bedroom2 = new Bedroom(3, 77, RoomType.TRIPLE);
+        bedroom1 = new Bedroom(2, 44, RoomType.DOUBLE, 100);
+        bedroom2 = new Bedroom(3, 77, RoomType.TRIPLE, 150);
 
         guest = new Guest("Billy");
 
         booking = new Booking(3, bedroom1);
 
-        conferenceRoom1 = new ConferenceRoom(100, "Peppermint");
-        conferenceRoom2 = new ConferenceRoom(120, "Spearmint");
+        conferenceRoom1 = new ConferenceRoom(100, "Peppermint", 200);
+        conferenceRoom2 = new ConferenceRoom(120, "Spearmint", 250);
         bedrooms = new ArrayList<Bedroom>();
         conferenceRooms = new ArrayList<ConferenceRoom>();
 
@@ -77,6 +77,11 @@ public class HotelTest {
     public void canCreateBooking(){
         Booking testBooking = hotel.bookRoom(bedroom1, 3);
         assertEquals(3, testBooking.getNoOfNights());
+    }
+
+    @Test
+    public void canIssueBill(){
+        assertEquals(300, hotel.calculateBill(booking), 0.01);
     }
 
 
