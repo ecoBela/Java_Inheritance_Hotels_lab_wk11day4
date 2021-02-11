@@ -18,6 +18,7 @@ public class HotelTest {
     Guest guest;
     Bedroom bedroom1;
     Bedroom bedroom2;
+    Bedroom bedroom3;
     Booking booking;
 
     ConferenceRoom conferenceRoom1;
@@ -32,6 +33,7 @@ public class HotelTest {
     public void before(){
         bedroom1 = new Bedroom(2, 44, RoomType.DOUBLE, 100);
         bedroom2 = new Bedroom(3, 77, RoomType.TRIPLE, 150);
+        bedroom3 = new Bedroom(5, 47, RoomType.TRIPLE, 200);
 
         guest = new Guest("Billy");
 
@@ -45,6 +47,7 @@ public class HotelTest {
         diningRoom = new DiningRoom(35, "Halford Room", 55);
         bedrooms.add(bedroom1);
         bedrooms.add(bedroom2);
+        bedrooms.add(bedroom3);
         conferenceRooms.add(conferenceRoom1);
         conferenceRooms.add(conferenceRoom2);
         hotel = new Hotel(bedrooms, conferenceRooms);
@@ -97,6 +100,13 @@ public class HotelTest {
     public void canAddDiningRoomToHashMap(){
         hotel.addDiningRoom(diningRoom);
         assertEquals(1, hotel.getDiningRooms());
+    }
+
+    @Test
+    public void onlyReturnEmptyRooms(){
+        hotel.addGuest(guest);
+        ArrayList<Bedroom> testBedroomList = hotel.getVacantBedrooms();
+        assertEquals(2, testBedroomList.size());
     }
 
 

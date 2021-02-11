@@ -56,4 +56,14 @@ public class Hotel {
         String name = diningRoom.getName();
         this.diningRooms.put(name, diningRoom);
     }
+
+    public ArrayList<Bedroom> getVacantBedrooms() {
+        ArrayList<Bedroom> vacantRooms = new ArrayList<Bedroom>();
+        for(Bedroom bedroom : this.bedrooms){
+            if(bedroom.getGuests() == 0){
+                vacantRooms.add(bedroom);
+            }
+        }
+        return vacantRooms;
+    }
 }
