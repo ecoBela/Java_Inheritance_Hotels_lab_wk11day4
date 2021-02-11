@@ -22,4 +22,14 @@ public class BedroomTest {
         assertEquals(0, bedroom.getGuests());
     }
 
+    @Test
+    public void hasRoomNumber(){
+        assertEquals(33, bedroom.getRoomNumber());
+    }
+
+    @Test
+    public void hasRoomType(){
+        assertEquals(RoomType.DOUBLE, bedroom.getRoomType());
+    }
+
 }
