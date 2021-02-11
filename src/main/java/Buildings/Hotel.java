@@ -1,5 +1,6 @@
 package Buildings;
 
+import People.Guest;
 import Rooms.Bedroom;
 import Rooms.ConferenceRoom;
 
@@ -14,11 +15,16 @@ public class Hotel {
         this.conferenceRooms = conferenceRooms;
     }
 
-    public int getBedrooms() {
-        return bedrooms.size();
+    public ArrayList<Bedroom> getBedrooms() {
+        return bedrooms;
     }
 
-    public int getConferenceRooms() {
-        return conferenceRooms.size();
+    public ArrayList<ConferenceRoom> getConferenceRooms() {
+        return conferenceRooms;
+    }
+
+    public void addGuest(Guest guest){
+        Bedroom roomAddto = this.bedrooms.get(0);
+        roomAddto.addGuest(guest);
     }
 }
