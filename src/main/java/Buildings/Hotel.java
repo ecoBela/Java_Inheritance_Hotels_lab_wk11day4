@@ -18,7 +18,7 @@ public class Hotel {
         return bedrooms.size();
     }
 
-    public ArrayList<ConferenceRoom> getConferenceRooms() {
-        return conferenceRooms;
+    public int getConferenceRooms() {
+        return conferenceRooms.size();
     }
 }
