@@ -32,4 +32,9 @@ public class Hotel {
         Bedroom roomToExit = this.bedrooms.get(0);
         roomToExit.removeGuest(guest);
     }
+
+    public Booking bookRoom(Bedroom bedroom, int noOfNights) {
+        Booking booking = new Booking(noOfNights, bedroom);
+        return booking;
+    }
 }

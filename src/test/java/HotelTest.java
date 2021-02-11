@@ -1,3 +1,4 @@
+import Hotels.Booking;
 import Hotels.Hotel;
 import People.Guest;
 import Rooms.Bedroom;
@@ -16,6 +17,8 @@ public class HotelTest {
     Guest guest;
     Bedroom bedroom1;
     Bedroom bedroom2;
+    Booking booking;
+
     ConferenceRoom conferenceRoom1;
     ConferenceRoom conferenceRoom2;
     ArrayList<Bedroom> bedrooms;
@@ -28,6 +31,8 @@ public class HotelTest {
         bedroom2 = new Bedroom(3, 77, RoomType.TRIPLE);
 
         guest = new Guest("Billy");
+
+        booking = new Booking(3, bedroom1);
 
         conferenceRoom1 = new ConferenceRoom(100, "Peppermint");
         conferenceRoom2 = new ConferenceRoom(120, "Spearmint");
@@ -66,6 +71,12 @@ public class HotelTest {
         hotel.removeGuest(guest);
         Bedroom roomToLeave = bedrooms.get(0);
         assertEquals(1, roomToLeave.getGuests());
+    }
+
+    @Test
+    public void canCreateBooking(){
+        Booking testBooking = hotel.bookRoom(bedroom1, 3);
+        assertEquals(3, testBooking.getNoOfNights());
     }
 
 
