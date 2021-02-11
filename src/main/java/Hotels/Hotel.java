@@ -1,4 +1,4 @@
-package Buildings;
+package Hotels;
 
 import People.Guest;
 import Rooms.Bedroom;
@@ -26,5 +26,10 @@ public class Hotel {
     public void addGuest(Guest guest){
         Bedroom roomAddto = this.bedrooms.get(0);
         roomAddto.addGuest(guest);
+    }
+
+    public void removeGuest(Guest guest) {
+        Bedroom roomToExit = this.bedrooms.get(0);
+        roomToExit.removeGuest(guest);
     }
 }

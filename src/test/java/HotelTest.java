@@ -1,4 +1,4 @@
-import Buildings.Hotel;
+import Hotels.Hotel;
 import People.Guest;
 import Rooms.Bedroom;
 import Rooms.ConferenceRoom;
@@ -59,6 +59,15 @@ public class HotelTest {
         assertEquals(1, roomAddto.getGuests());
     }
 
-    
+    @Test
+    public void checkOutGuests(){
+        hotel.addGuest(guest);
+        hotel.addGuest(guest);
+        hotel.removeGuest(guest);
+        Bedroom roomToLeave = bedrooms.get(0);
+        assertEquals(1, roomToLeave.getGuests());
+    }
+
+
 
 }
